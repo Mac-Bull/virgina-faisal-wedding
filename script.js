@@ -38,7 +38,7 @@ galleryImages.forEach((image, index) => {
 });
 const galleryThumbs = [...document.querySelectorAll('.gallery-thumb')];
 
-function showGalleryImage(index) {
+function showGalleryImage(index, shouldScrollThumbnail = true) {
   const oldIndex = galleryIndex;
   galleryIndex = (index + galleryImages.length) % galleryImages.length;
   galleryDirection = index >= oldIndex ? 1 : -1;
@@ -55,7 +55,9 @@ function showGalleryImage(index) {
     thumb.classList.toggle('active', thumbIndex === galleryIndex);
     thumb.setAttribute('aria-pressed', String(thumbIndex === galleryIndex));
   });
-  galleryThumbs[galleryIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+  if (shouldScrollThumbnail) {
+    galleryThumbs[galleryIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+  }
 }
 
 galleryThumbs.forEach(thumb => thumb.addEventListener('click', () => {
@@ -85,4 +87,4 @@ galleryStage.addEventListener('pointerup', event => {
 galleryStage.addEventListener('pointercancel', () => {
   swipeStart = null;
 });
-showGalleryImage(galleryIndex);
+showGalleryImage(galleryIndex, false);
