@@ -1,0 +1,547 @@
+:root {
+  --gold: #d5a51d;
+  --gold-dark: #af7e09;
+  --gold-light: #fdde8d;
+  --gold-gradient: linear-gradient(135deg, #af7e09 0%, #fdde8d 100%);
+  --black: #050505;
+  --card: #1a1a1aef;
+  --white: #f7f7f7;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: #222;
+  color: var(--white);
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+}
+main {
+  width: min(100%, 560px);
+  margin: auto;
+  background: #050505;
+  min-height: 100vh;
+  overflow: hidden;
+  box-shadow: 0 0 70px #000;
+}
+.script {
+  font-family: "Lobster", cursive;
+}
+.hero {
+  height: max(100svh, 640px);
+  background-image: url("Assets/BEN_30042+gradientblack.png");
+  background-position: center bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+.hero-inner {
+  height: 100%;
+  padding: clamp(28px, 6svh, 50px) clamp(16px, 5vw, 25px)
+    clamp(12px, 2.5svh, 20px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.overline {
+  font-size: clamp(20px, 6vw, 25px);
+  margin: 0;
+}
+.hero-spacer {
+  flex: 1;
+}
+.hero h1 {
+  font-size: clamp(36px, 10vw, 42px);
+  line-height: 0.98;
+  margin: 0 0 15px;
+  text-shadow: 0 3px 12px #000;
+}
+.hero h1 span {
+  display: block;
+  width: fit-content;
+  color: var(--gold);
+  font-size: 35px;
+  margin: clamp(8px, 2svh, 15px) auto 6px;
+}
+footer .names span {
+  display: block;
+  width: fit-content;
+  color: var(--gold);
+  font-size: 0.75em;
+  margin: 6px auto;
+}
+.hero-inner > p:not(.overline) {
+  margin: 0 0 22px;
+  font-size: 12px;
+}
+.countdown {
+  display: flex;
+  gap: clamp(9px, 3vw, 14px);
+}
+.countdown div {
+  display: grid;
+  gap: 6px;
+}
+.countdown b {
+  width: clamp(30px, 9vw, 20px);
+  height: clamp(30px, 9vw, 20px);
+  border-radius: 50%;
+  background: var(--gold-gradient);
+  display: grid;
+  place-items: center;
+  color: #000;
+  font-size: 12px;
+  font-weight: bold;
+}
+.countdown small {
+  font-size: 10px;
+}
+.scroll-cue {
+  font-size: 30px;
+  color: var(--gold);
+  text-decoration: none;
+  animation: bob 1.5s infinite;
+}
+@keyframes bob {
+  50% {
+    transform: translateY(6px);
+  }
+}
+.invitation-body {
+  background:
+    linear-gradient(#05050570, #05050570),
+    url("Gallery/BEN_3381.jpg") top center/560px auto repeat-y;
+}
+.section {
+  padding: 55px 34px;
+}
+.quote {
+  background: #050505e8;
+}
+.quote-card {
+  position: relative;
+  background: #191919;
+  border-radius: 16px;
+  padding: 42px 34px 35px;
+  font-size: 12px;
+  line-height: 1.55;
+}
+.quote-card .quote-mark {
+  position: absolute;
+  left: 20px;
+  top: 18px;
+  width: 34px;
+  height: auto;
+}
+.quote-card .quote-mark.end {
+  left: auto;
+  top: auto;
+  right: 18px;
+  bottom: 18px;
+}
+.arabic {
+  font-family: serif;
+  font-size: 17px;
+  line-height: 1.8;
+}
+.quote-card small {
+  display: block;
+  margin-top: 18px;
+}
+.couple {
+  text-align: center;
+}
+.basmala {
+  margin: 0;
+}
+.intro {
+  font-weight: 500;
+  margin: 4px 0 50px;
+}
+.person {
+  text-align: left;
+  margin-bottom: 28px;
+}
+.bio {
+  margin: 0 4px 18px;
+}
+.groom-bio {
+  margin: 18px 4px 0;
+}
+.person h2 {
+  color: var(--gold);
+  font-size: 29px;
+  margin: 0 0 8px;
+}
+.person p {
+  font-size: 12px;
+}
+.person img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 19px;
+  display: block;
+}
+.gold-line {
+  height: 1px;
+  background: var(--gold-gradient);
+  margin: 28px 0;
+}
+.event {
+  text-align: center;
+}
+.label {
+  color: var(--gold);
+  font-size: 33px;
+  margin: 0 0 15px;
+}
+.event > p:not(.label) {
+  font-size: 11px;
+}
+.event-card,
+.glass-card {
+  margin-top: 28px;
+  padding: 30px 20px;
+  background: #1b1b1be8;
+  border: 1px solid #aaa;
+  border-radius: 22px;
+  backdrop-filter: blur(9px);
+}
+.event-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.72);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.06),
+    0 18px 45px rgba(0, 0, 0, 0.28);
+  -webkit-backdrop-filter: blur(18px) saturate(80%);
+  backdrop-filter: blur(18px) saturate(80%);
+}
+.event-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      ellipse at 85% 12%,
+      rgba(255, 255, 255, 0.18),
+      transparent 34%
+    ),
+    linear-gradient(
+      125deg,
+      rgba(255, 255, 255, 0.08),
+      transparent 28%,
+      transparent 68%,
+      rgba(255, 255, 255, 0.04)
+    );
+}
+.event-card .script {
+  font-size: 27px;
+  color: var(--gold);
+  margin: 8px;
+}
+.date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin: 14px 0;
+}
+.date span {
+  text-transform: none;
+  font-size: 12px;
+  border-inline: 1px solid #ddd;
+  padding: 5px 15px;
+}
+.date b {
+  font: 52px "Lobster";
+  color: #fff;
+}
+.event-card strong {
+  font-size: 12px;
+}
+.event-card h3 {
+  margin: 18px 0 0;
+}
+.event-card hr.dashed {
+  border: 0;
+  border-top: 2px dashed #ccc;
+  margin: 35px 0;
+}
+.address {
+  font-size: 11px;
+  line-height: 1.7;
+  margin: 8px 0 22px;
+}
+.button {
+  display: inline-block;
+  border: 0;
+  border-radius: 30px;
+  padding: 13px 24px;
+  background: #fff;
+  color: #050505;
+  text-decoration: none;
+  font: 600 11px "DM Sans";
+  cursor: pointer;
+}
+.gallery {
+  text-align: center;
+}
+.glass-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 22px;
+  background: rgba(24, 24, 24, 0.48);
+  border-color: rgba(255, 255, 255, 0.72);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.06),
+    0 18px 45px rgba(0, 0, 0, 0.28);
+  -webkit-backdrop-filter: blur(18px) saturate(80%);
+  backdrop-filter: blur(18px) saturate(80%);
+}
+.glass-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      ellipse at 85% 12%,
+      rgba(255, 255, 255, 0.18),
+      transparent 34%
+    ),
+    linear-gradient(
+      125deg,
+      rgba(255, 255, 255, 0.08),
+      transparent 28%,
+      transparent 68%,
+      rgba(255, 255, 255, 0.04)
+    );
+}
+.gallery-thumbs {
+  display: flex;
+  gap: 7px;
+  margin-bottom: 18px;
+  padding-bottom: 5px;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold-light) transparent;
+  scroll-snap-type: x proximity;
+}
+.gallery-thumb {
+  flex: 0 0 31%;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  opacity: 0.66;
+  overflow: hidden;
+  transition: 0.25s ease;
+  scroll-snap-align: center;
+}
+.gallery-thumb:hover,
+.gallery-thumb.active {
+  border-color: var(--gold-light);
+  opacity: 1;
+}
+.gallery-thumb img {
+  display: block;
+  width: 100%;
+  height: 65px;
+  object-fit: cover;
+}
+.gallery-stage {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  touch-action: pan-y;
+}
+.featured {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: contain;
+  background: rgba(5, 5, 5, 0.72);
+  transition:
+    opacity 0.2s ease,
+    transform 0.35s ease;
+}
+.featured.changing-next {
+  opacity: 0;
+  transform: translateX(-24px);
+}
+.featured.changing-previous {
+  opacity: 0;
+  transform: translateX(24px);
+}
+.gallery-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  color: #111;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+.gallery-arrow.previous {
+  left: 10px;
+}
+.gallery-arrow.next {
+  right: 10px;
+}
+.location {
+  text-align: center;
+}
+.location-title {
+  font-size: 33px!important;
+  line-height: 1;
+  margin-bottom: 24px;
+}
+.location iframe {
+  border: 0;
+  width: 100%;
+  height: 330px;
+  border-radius: 20px;
+}
+.location h2 {
+  font-size: 29px;
+  margin: 25px 0 8px;
+}
+.location > p {
+  font-size: 12px;
+}
+.gift {
+  text-align: center;
+}
+.gift-card {
+  margin: 36px auto;
+  padding: 18px 14px 14px;
+  border: 1.5px solid rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  background: rgba(8, 8, 8, 0.16);
+  max-width: 320px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 14px 32px rgba(0, 0, 0, 0.18);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+.gift-card .qris-logo {
+  display: block;
+  width: 82px;
+  height: auto;
+  margin: 0 auto 8px;
+}
+.gift-card h3 {
+  margin: 0 0 12px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+}
+.qr-frame {
+  padding: 10px;
+  border-radius: 8px;
+  background: #fff;
+}
+.gift-card .qr-code {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+}
+.gift-card > b {
+  color: var(--gold);
+  font-size: 24px;
+}
+.gift-card p {
+  font-size: 11px;
+  color: #bbb;
+}
+.label,
+.person h2,
+.event-card .script,
+.scroll-cue,
+.gift-card > b,
+footer h2 {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero h1 span,
+footer .names span {
+  background: none;
+  color: var(--gold);
+  -webkit-text-fill-color: var(--gold);
+}
+footer {
+  text-align: center;
+  padding: 75px 34px;
+  background: #03030380;
+}
+footer h2 {
+  color: var(--gold);
+  font-size: 32px;
+}
+footer > p:not(.names) {
+  font-size: 12px;
+  line-height: 1.7;
+}
+.names {
+  font-size: 42px;
+  margin-top: 70px;
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: 0.75s;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+@media (max-width: 420px) {
+  .section {
+    padding-inline: 24px;
+  }
+  .quote-card {
+    padding-inline: 25px;
+  }
+}
+
+@media (max-height: 700px) {
+  .hero-inner {
+    padding-top: 24px;
+  }
+  .hero h1 {
+    margin-bottom: 10px;
+  }
+  .hero-inner > p:not(.overline) {
+    margin-bottom: 12px;
+  }
+  .countdown div {
+    gap: 3px;
+  }
+}

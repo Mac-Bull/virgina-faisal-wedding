@@ -1,0 +1,57 @@
+/* Keep one full portrait fixed while all invitation content scrolls over it. */
+body,
+input,
+select,
+textarea {
+  font-weight: 300;
+}
+
+strong,
+.button {
+  font-weight: 500;
+}
+
+.script {
+  font-weight: 500;
+}
+
+.hero {
+  position: relative;
+  z-index: 2;
+}
+
+.invitation-body {
+  position: relative;
+  background: transparent;
+}
+
+.invitation-body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  width: min(100%, 560px);
+  margin: auto;
+  background:
+    linear-gradient(rgba(5, 5, 5, .48), rgba(5, 5, 5, .48)),
+    url('Gallery/BEN_3381.jpg') center center / cover no-repeat;
+  pointer-events: none;
+}
+
+.invitation-body > * {
+  position: relative;
+  z-index: 1;
+}
+
+.invitation-body > .section:not(.quote),
+.invitation-body > footer {
+  background: transparent;
+}
+
+.invitation-body > .quote {
+  background: rgba(5, 5, 5, 1);
+}
+
+.invitation-body > .rsvp {
+  background: rgba(19, 19, 19, .9);
+}
