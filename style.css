@@ -270,28 +270,35 @@ footer .names span {
   margin: 14px 0;
 }
 .date span {
-  font-size: 12px;
+  font-size: 14px;
   min-width: 46px;
 }
 .date-day {
   display: grid;
   min-width: 98px;
-  padding: 3px 18px 5px;
+  padding: 3px 14px 6px;
   border-inline: 1px solid rgba(255, 255, 255, 0.9);
 }
 .date-day small {
-  font-size: 12px;
+  font-size: 14px;
 }
 .date-day b {
   font: 52px "Lobster";
   color: #fff;
   line-height: 1.05;
 }
-.event-card strong {
+.event-card .date-day strong {
+  margin-top: 8px;
   font-size: 12px;
+  line-height: 1.35;
+  white-space: nowrap;
+}
+.event-card strong {
+  font-size: 14px;
+  width: 100%;
 }
 .event-card h3 {
-  margin: 18px 0 0;
+  margin: 20px 0 0;
 }
 .event-card hr.dashed {
   border: 0;
