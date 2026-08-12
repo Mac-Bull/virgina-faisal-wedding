@@ -88,3 +88,42 @@ galleryStage.addEventListener('pointercancel', () => {
   swipeStart = null;
 });
 showGalleryImage(galleryIndex, false);
+
+const weddingMusic = document.querySelector('#weddingMusic');
+const musicControl = document.querySelector('#musicControl');
+let musicHasStarted = false;
+
+function updateMusicControl() {
+  const isPlaying = !weddingMusic.paused;
+  musicControl.classList.toggle('playing', isPlaying);
+  musicControl.setAttribute('aria-pressed', String(isPlaying));
+  musicControl.setAttribute('aria-label', isPlaying ? 'Jeda musik' : 'Putar musik');
+}
+
+async function startWeddingMusic() {
+  try {
+    await weddingMusic.play();
+    musicHasStarted = true;
+    updateMusicControl();
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function startMusicOnFirstInteraction(event) {
+  if (event.target.closest?.('#musicControl') || musicHasStarted) return;
+  startWeddingMusic();
+}
+
+musicControl.addEventListener('click', async event => {
+  event.stopPropagation();
+  if (weddingMusic.paused) await startWeddingMusic();
+  else weddingMusic.pause();
+  updateMusicControl();
+});
+weddingMusic.addEventListener('play', updateMusicControl);
+weddingMusic.addEventListener('pause', updateMusicControl);
+document.addEventListener('pointerdown', startMusicOnFirstInteraction, { passive: true });
+document.addEventListener('keydown', startMusicOnFirstInteraction);
+startWeddingMusic();

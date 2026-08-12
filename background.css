@@ -9,6 +9,7 @@ textarea {
 strong,
 .button {
   font-weight: 500;
+  font-size: 14px;
 }
 
 .script {
@@ -54,4 +55,39 @@ strong,
 
 .invitation-body > .rsvp {
   background: rgba(19, 19, 19, .9);
+}
+
+.music-control {
+  position: fixed;
+  right: max(16px, calc((100vw - 560px) / 2 + 16px));
+  bottom: max(16px, env(safe-area-inset-bottom));
+  z-index: 20;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 50%;
+  background: rgba(15, 15, 15, 0.68);
+  color: #fdde8d;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  cursor: pointer;
+}
+
+.music-icon {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.music-control.playing .music-icon {
+  animation: music-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes music-pulse {
+  50% {
+    transform: scale(1.18) rotate(8deg);
+  }
 }
