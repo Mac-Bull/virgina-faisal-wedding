@@ -35,7 +35,7 @@ strong,
   margin: auto;
   background:
     linear-gradient(rgba(5, 5, 5, .48), rgba(5, 5, 5, .48)),
-    url('Gallery/BEN_3381.jpg') center center / cover no-repeat;
+    url('Gallery/BEN_3381.webp') center center / cover no-repeat;
   pointer-events: none;
 }
 

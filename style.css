@@ -33,7 +33,7 @@ main {
 }
 .hero {
   height: max(100svh, 640px);
-  background-image: url("Assets/BEN_30042+gradientblack.png");
+  background-image: url("Assets/BEN_30042+gradientblack.webp");
   background-position: center bottom;
   background-size: cover;
   background-repeat: no-repeat;
@@ -114,7 +114,7 @@ footer .names span {
 .invitation-body {
   background:
     linear-gradient(#05050570, #05050570),
-    url("Gallery/BEN_3381.jpg") top center/560px auto repeat-y;
+    url("Gallery/BEN_3381.webp") top center/560px auto repeat-y;
 }
 .section {
   padding: 55px 34px;
@@ -276,7 +276,7 @@ footer .names span {
 .date-day {
   display: grid;
   min-width: 98px;
-  padding: 3px 14px 6px;
+  padding: 0px 14px 0px;
   border-inline: 1px solid rgba(255, 255, 255, 0.9);
 }
 .date-day small {
@@ -288,7 +288,7 @@ footer .names span {
   line-height: 1.05;
 }
 .event-card .date-day strong {
-  margin-top: 8px;
+  margin-top: 0px;
   font-size: 12px;
   line-height: 1.35;
   white-space: nowrap;
@@ -306,7 +306,7 @@ footer .names span {
   margin: 42px 0 34px;
 }
 .address {
-  font-size: 11px;
+  font-size: 13px;
   line-height: 1.7;
   margin: 8px 0 22px;
 }
@@ -456,7 +456,7 @@ footer .names span {
   margin: 25px 0 8px;
 }
 .location > p {
-  font-size: 12px;
+  font-size: 13px;
 }
 .gift {
   text-align: center;
@@ -533,7 +533,7 @@ footer h2 {
   font-size: 32px;
 }
 footer > p:not(.names) {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.7;
 }
 .names {

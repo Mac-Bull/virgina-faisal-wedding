@@ -23,7 +23,7 @@ const galleryImages = window.WEDDING_GALLERY;
 const galleryStage = document.querySelector('.gallery-stage');
 const featuredImage = document.querySelector('.featured');
 const thumbnailsContainer = document.querySelector('.gallery-thumbs');
-let galleryIndex = galleryImages.findIndex(image => image.src.toLowerCase().endsWith('ben_3138.jpg'));
+let galleryIndex = galleryImages.findIndex(image => image.src.toLowerCase().endsWith('ben_3138.webp'));
 if (galleryIndex < 0) galleryIndex = 0;
 let galleryDirection = 1;
 let galleryTransitionTimer;
