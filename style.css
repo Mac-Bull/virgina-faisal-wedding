@@ -20,6 +20,11 @@ body {
   font-family: "DM Sans", sans-serif;
   font-size: 14px;
 }
+body.invitation-locked {
+  overflow: hidden;
+  overscroll-behavior: none;
+  touch-action: none;
+}
 main {
   width: min(100%, 560px);
   margin: auto;
@@ -81,6 +86,26 @@ footer .names span {
 .countdown {
   display: flex;
   gap: clamp(9px, 3vw, 14px);
+}
+.countdown[hidden],
+.scroll-cue[hidden],
+.open-invitation[hidden] {
+  display: none;
+}
+.open-invitation {
+  min-width: 160px;
+  padding: 12px 24px;
+  border: 1px solid rgba(253, 222, 141, 0.85);
+  border-radius: 999px;
+  background: var(--gold-gradient);
+  color: #080808;
+  font: 500 14px "DM Sans", sans-serif;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+.open-invitation:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: 3px;
 }
 .countdown div {
   display: grid;

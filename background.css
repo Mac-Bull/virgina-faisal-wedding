@@ -77,6 +77,10 @@ strong,
   cursor: pointer;
 }
 
+body.invitation-locked .music-control {
+  display: none;
+}
+
 .music-icon {
   font-size: 22px;
   line-height: 1;

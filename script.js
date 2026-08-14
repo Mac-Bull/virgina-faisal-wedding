@@ -91,6 +91,9 @@ showGalleryImage(galleryIndex, false);
 
 const weddingMusic = document.querySelector('#weddingMusic');
 const musicControl = document.querySelector('#musicControl');
+const openInvitation = document.querySelector('#openInvitation');
+const countdown = document.querySelector('#countdown');
+const scrollCue = document.querySelector('.scroll-cue');
 let musicHasStarted = false;
 
 function updateMusicControl() {
@@ -111,11 +114,6 @@ async function startWeddingMusic() {
   }
 }
 
-function startMusicOnFirstInteraction(event) {
-  if (event.target.closest?.('#musicControl') || musicHasStarted) return;
-  startWeddingMusic();
-}
-
 musicControl.addEventListener('click', async event => {
   event.stopPropagation();
   if (weddingMusic.paused) await startWeddingMusic();
@@ -124,6 +122,14 @@ musicControl.addEventListener('click', async event => {
 });
 weddingMusic.addEventListener('play', updateMusicControl);
 weddingMusic.addEventListener('pause', updateMusicControl);
-document.addEventListener('pointerdown', startMusicOnFirstInteraction, { passive: true });
-document.addEventListener('keydown', startMusicOnFirstInteraction);
-startWeddingMusic();
+
+openInvitation.addEventListener('click', async () => {
+  await startWeddingMusic();
+  document.body.classList.remove('invitation-locked');
+  openInvitation.hidden = true;
+  countdown.hidden = false;
+  scrollCue.hidden = false;
+});
+
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+window.scrollTo(0, 0);
