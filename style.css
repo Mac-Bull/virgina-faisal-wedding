@@ -148,6 +148,10 @@ footer .names span {
   font-size: 17px;
   line-height: 1.8;
 }
+.quote-card .arabic {
+  direction: rtl;
+  text-align: right;
+}
 .quote-card small {
   display: block;
   margin-top: 18px;
