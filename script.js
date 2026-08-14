@@ -128,6 +128,7 @@ openInvitation.addEventListener('click', async () => {
   document.body.classList.remove('invitation-locked');
   openInvitation.hidden = true;
   countdown.hidden = false;
+  countdown.classList.add('is-revealed');
   scrollCue.hidden = false;
 });
 
