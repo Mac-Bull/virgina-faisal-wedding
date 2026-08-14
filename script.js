@@ -124,7 +124,14 @@ weddingMusic.addEventListener('play', updateMusicControl);
 weddingMusic.addEventListener('pause', updateMusicControl);
 
 openInvitation.addEventListener('click', async () => {
-  await startWeddingMusic();
+  openInvitation.disabled = true;
+  openInvitation.classList.add('is-closing');
+  const buttonExit = new Promise(resolve => {
+    openInvitation.addEventListener('animationend', resolve, { once: true });
+    setTimeout(resolve, 500);
+  });
+
+  await Promise.all([startWeddingMusic(), buttonExit]);
   document.body.classList.remove('invitation-locked');
   openInvitation.hidden = true;
   countdown.hidden = false;

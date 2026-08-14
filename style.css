@@ -84,7 +84,8 @@ footer .names span {
   font-size: 12px;
 }
 .hero-action {
-  min-height: 82px;
+  height: 88px;
+  flex: 0 0 88px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -141,6 +142,18 @@ footer .names span {
     transform: none;
   }
 }
+@keyframes invitation-button-close {
+  from {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.88);
+    filter: blur(4px);
+  }
+}
 .countdown[hidden],
 .scroll-cue[hidden],
 .open-invitation[hidden] {
@@ -157,6 +170,10 @@ footer .names span {
   cursor: pointer;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
   animation: invitation-button-reveal 0.6s ease-out both;
+}
+.open-invitation.is-closing {
+  pointer-events: none;
+  animation: invitation-button-close 0.42s cubic-bezier(0.4, 0, 0.2, 1) both;
 }
 .open-invitation:focus-visible {
   outline: 2px solid var(--white);
