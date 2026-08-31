@@ -3,7 +3,7 @@
   --gold: #d5a51d;
   --gold-dark: #af7e09;
   --gold-light: #fdde8d;
-  --gold-gradient: linear-gradient(135deg, #af7e09 0%, #fdde8d 100%);
+  --gold-gradient: url("Assets/gold-gradient.svg") center / cover no-repeat;
   --black: #050505;
   --card: #1a1a1aef;
   --white: #f7f7f7;
@@ -168,7 +168,7 @@ footer .names span {
   appearance: none;
   -webkit-appearance: none;
   background-color: #d5a51d;
-  background-image: var(--gold-gradient);
+  background: #d5a51d var(--gold-gradient);
   color: #080808;
   -webkit-text-fill-color: #080808;
   forced-color-adjust: none;
@@ -194,7 +194,7 @@ footer .names span {
   height: clamp(30px, 9vw, 20px);
   border-radius: 50%;
   background-color: #d5a51d;
-  background-image: var(--gold-gradient);
+  background: #d5a51d var(--gold-gradient);
   display: grid;
   place-items: center;
   color: #000;
